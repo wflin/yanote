@@ -31,4 +31,9 @@ public class HelloWord {
     public List<TbUser> getUsers(){
         return helloWordService.getUsers();
     }
+
+    @GetMapping("/wfl")
+    public String getWfl(){
+        return "welcome to wfl";
+    }
 }
