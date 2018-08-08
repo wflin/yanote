@@ -1,0 +1,40 @@
+<template name="tabBar">
+  <!-- <view class="tabBar"> 
+  <block wx:for="{{tabBar}}" wx:for-item="item" wx:key="tabBar">
+    <view class="nav_link">
+      <navigator open-type="redirect" url="{{item.pagePath}}">
+        <view><image class="icon" src='{{item.iconPath}}'></image></view>
+        <view class="{{item.current== 1 ? 'tabBartext' :''}}">{{item.text}}</view>
+      </navigator>  
+    </view>
+  </block>
+</view> -->
+  <view class="flex fix_nav_wp">
+    <view class="nav_link" bindtap='gotoCompanyIndex'>
+      <navigator open-type="redirect" url="/pages/index/index">
+        <view class="defalut_btn {{tabBar.index== 0 ? 'on_cor' :''}}">
+          <icon class="iconfont icon-shangjia del_ico idx_ico"></icon>
+          <text class="txt">首页</text>
+        </view>
+      </navigator>
+    </view>
+    <view class="nav_link ">
+    <navigator open-type="redirect" url="/pages/menu/menu">
+      <view class="defalut_btn {{tabBar.index== 1 ? 'on_cor' :''}}" bindtap='gotopublish'>
+        <view class="plus_wp">
+          <image src='../../images/plus_ico.png' class="plus_ico" />
+        </view>
+        <text class="txt txt_fb">发布</text>
+      </view>
+      </navigator>
+    </view>
+    <view class="nav_link">
+<navigator open-type="redirect" url="/pages/my/my">
+      <view class="defalut_btn {{tabBar.index== 2 ? 'on_cor' :''}}" bindtap='bindViewMy'>
+        <icon class="iconfont icon-wode del_ico mine_ico my_ico"></icon>
+        <text class="txt">我的</text>
+      </view>
+      </navigator>
+    </view>
+  </view>
+</template>

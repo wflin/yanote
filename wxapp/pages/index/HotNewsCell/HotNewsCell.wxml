@@ -1,10 +1,10 @@
 <template name="HotNewsCell">
   <view class="hotNewsCell-container">
       <view class="hotNewsCell-topView">
-        <image class="hotNewsCell-topView-left-image" src="{{titleImage}}"></image>
+        <image class="hotNewsCell-topView-left-image"  mode="aspectFit" src="../../images/tabbar/my.png"></image>
         <view class="hotNewsCell-topView-right-content">
-          <text class="hotNewsCell-title">{{title}}</text>
-          <text class="hotNewsCell-Subtitle">{{description}}</text>
+          <text class="hotNewsCell-title">{{noteTitle}}</text>
+          <text class="hotNewsCell-Subtitle">{{noteContent}}</text>
         </view>
       </view>
     <view class="hotNewsCell-bottomView">

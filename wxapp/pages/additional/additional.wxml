@@ -1,0 +1,41 @@
+<!--pages/additional/additional.wxml-->
+<import src="../../template/tabbar.wxml"/>
+<view class='section'>
+  <form class="form" bindsubmit="addYanote" bindreser="addYanote" >
+    <radio-group name="notetype">
+      <label>
+        <radio value="MATERIALS" checked="true"/>资料
+      </label>
+      <label>
+        <radio value="QUESTION"/>问答
+      </label>
+      <label>
+        <radio value="DEMAND"/>需求
+      </label>
+      <label>
+        <radio value="PAPER_STRIP"/>纸条
+      </label>
+    </radio-group>
+    <!--用户名与密码-->
+    <View class="inputView">
+      <input class="input" name="title"  placeholder="请输入标题" placeholder-style="color: gray"> </input>
+    </View>
+    <view class="inputView">
+      <textarea class="textarea" name="content" maxlength="200" placeholder="请输入内容" placeholder-style="color: gray"/>
+    </view>
+   
+    <!--登录用户类型
+    <View style="display:flex;justify-content: center;margin-top:10px;">
+    
+    <!--忘记密码
+    <label>
+    <switch name="switch" type="checkbox" checked bindchange="switch1Change" style="margin-left:20px;"/>
+    <Text style="font-size: 14px;padding-left:5px;">忘记密码?</Text>
+    </label>
+    </View>-->
+    <!--button formType属性两个可选值submit, reset分别会触发form的bindsubmit，bindreser事件 -->
+    <button formType="submit" type="primary" style="margin-top:10px;">提交</button>
+    <button formType="reset" type="warn" style="margin-top:10px;">重置</button>
+  </form>
+</view>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>

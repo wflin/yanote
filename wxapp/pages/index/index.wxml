@@ -1,5 +1,7 @@
 <import src="HotNewsCell/HotNewsCell.wxml" />
 <import src="GridIconCell/GridIconCell.wxml" />
+<import src="../../template/tabbar.wxml"/>
+
 
 <!--index.wxml-->
 <view>
@@ -22,13 +24,33 @@
   <view class="yaowen-container">
     <text class="yaowen">热门推荐</text>
   </view>
-  <block wx:for="{{list}}" wx:for-item="item" wx:key="key">
+  <block wx:for="{{indexList}}" wx:for-item="item" wx:key="key">
     <view class="hotNewsList-container" catchtap="tapHotNewsCell">
       <template is="HotNewsCell" data="{{...item}}"></template>
     </view>
   </block>
-  <!-- <view href="tel:400-700-0097">  
-      <image src="../../images/index/kefu.png" class="kefu full-image light-bg" alt="客服电话"></image>
-  </view>
-  <image src="../../images/index/buttom.png" class="kefu-bottom full-image" alt="让考研更简单"></image> -->
 </view>
+
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+<!-- <view class="flex fix_nav_wp">
+  <view class="nav_link" bindtap='gotoCompanyIndex'>
+    <button class="defalut_btn on_cor">
+      <icon class="iconfont icon-shangjia del_ico idx_ico"></icon>     
+      <text class="txt">首页</text>
+    </button>
+  </view>
+  <view class="nav_link ">
+    <button class="defalut_btn" bindtap='gotopublish'>
+      <view class="plus_wp">
+        <image src='../../images/plus_ico.png' class="plus_ico" />
+      </view>
+      <text class="txt txt_fb">发布</text>
+    </button>
+  </view>
+  <view class="nav_link">
+    <button class="defalut_btn" bindtap='bindViewMy'>
+      <icon class="iconfont icon-wode del_ico mine_ico my_ico"></icon>
+      <text class="txt">我的</text>
+    </button>
+  </view>
+</view>  -->

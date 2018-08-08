@@ -1,0 +1,24 @@
+/* pages/additional/additional.wxss */
+.section{
+  margin: 15px;
+}
+.input{
+  padding-left: 10px;
+  height: 30px;
+}
+.textarea{
+  padding-left: 10px;
+  height: 150px;
+  margin-left: 5px;
+  padding-right: 30px;
+}
+
+.inputView{
+  /*边界：大小1px, 为固体，为绿色*/
+  border: 1px solid green;
+  /*边界角的弧度*/
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 15px;
+}

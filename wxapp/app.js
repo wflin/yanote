@@ -1,4 +1,5 @@
 //app.js
+var tabbar = require('template/tabbar.js'); 
 App({
   onLaunch: function () {
     //调用API从本地缓存中获取数据
@@ -24,7 +25,19 @@ App({
       })
     }
   },
+  showMenu: function(){
+    wx.showActionSheet({
+      itemList: ['A', 'B', 'C'],
+      success: function (res) {
+        console.log(res.tapIndex)
+      },
+      fail: function (res) {
+        console.log(res.errMsg)
+      }
+    })
+  },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    tabbar: tabbar
   }
 })

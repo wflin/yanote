@@ -13,7 +13,24 @@ const formatNumber = n => {
   n = n.toString()
   return n[1] ? n : '0' + n
 }
-
+function request(params, success, fail) {
+  wx.request({
+    //上线接口地址要是https测试可以使用http接口方式
+    url: 'https://api.yanyanbiji.top/' + params.url,
+    data: params.data,
+    method: params.type,
+    header: {
+      'content-type': 'application/json'
+    },
+    success: function (res) {
+      success(res.data);
+    },
+    fail: function (res) {
+      fail(res);
+    }
+  })
+}
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  request: request 
 }

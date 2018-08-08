@@ -1,3 +1,4 @@
+import { request } from "../../utils/util.js"
 var app = getApp()
 // pages/my.js
 Page({
@@ -7,6 +8,7 @@ Page({
    */
   data: {
     motto: '世界上唯一不变的，就是一切都在变',
+    tabbarIndex: 2,
     userInfo: {}
   },
 
@@ -14,6 +16,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    app.globalData.tabbar.tabbar("tabBar", 2, this)
     // 页面初始化 options为页面跳转所带来的参数
     var _self = this
     //调用应用实例的方法获取全局数据
@@ -72,5 +75,19 @@ Page({
    */
   onShareAppMessage: function () {
   
-  }
+  },
+  reCharge: function () {
+    request({
+      url: "yanote",
+      data: {
+        userId: null,
+        noteType: "QUESTION",
+        noteTitle: "biaoti",
+        noteContent: "dfsdfsdfsfsdfsfsf"
+      },
+      type: "POST"
+    },function(data){
+      console.log(data)
+    }
+  )}
 })

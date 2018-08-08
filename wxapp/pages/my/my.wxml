@@ -1,4 +1,5 @@
 <!--pages/my.wxml-->
+<import src="../../template/tabbar.wxml"/>
 <!-- <view class="container">
   <view  bindtap="bindViewTap" class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
@@ -29,7 +30,7 @@
                     提现
                 </navigator>
                 
-                <navigator url="../wallet/recharge" open-type="navigate"
+                <navigator url="../wallet/recharge" bindtap="reCharge"      open-type="navigate"
                            class="button button-energized  button-outline">充值
                 </navigator>
             </view>
@@ -87,8 +88,7 @@
             <text class="icon-accessory iconfont icon-right"></text>
         </navigator>
     </view>
-
-
 </view>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
 
 

@@ -3,13 +3,15 @@
 const app = getApp()
 const iconList = require('../../data/four-icon-data')
 const list = require('../../data/index-tuijian-data')
+import { request } from "../../utils/util.js"
 
 Page({
   data: {
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    indexList: []
   },
   //事件处理函数
   bindViewTap: function() {
@@ -18,9 +20,10 @@ Page({
     })
   },
   onLoad: function () {
+    app.globalData.tabbar.tabbar("tabBar", 0, this)
+    var that = this
     this.setData(iconList)
-    this.setData(list)
-    console.log(list)
+    //this.setData(list)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -47,9 +50,17 @@ Page({
         }
       })
     }
+    request({
+      url: "yanote",
+      data: {},
+      type: "GET"
+    }, function (data) {
+      that.setData({
+         indexList: data
+       })
+    })
   },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
