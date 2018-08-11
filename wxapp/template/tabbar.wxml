@@ -18,15 +18,15 @@
         </view>
       </navigator>
     </view>
-    <view class="nav_link ">
-    <navigator open-type="redirect" url="/pages/menu/menu">
-      <view class="defalut_btn {{tabBar.index== 1 ? 'on_cor' :''}}" bindtap='gotopublish'>
+    <view class="nav_link " bindtap='onFabu'>
+    
+      <view  class="defalut_btn {{tabBar.index== 1 ? 'on_cor' :''}}" bindtap='gotopublish'>
         <view class="plus_wp">
           <image src='../../images/plus_ico.png' class="plus_ico" />
         </view>
         <text class="txt txt_fb">发布</text>
       </view>
-      </navigator>
+      
     </view>
     <view class="nav_link">
 <navigator open-type="redirect" url="/pages/my/my">

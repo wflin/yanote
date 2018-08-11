@@ -9,7 +9,8 @@ Page({
   data: {
     motto: '世界上唯一不变的，就是一切都在变',
     tabbarIndex: 2,
-    userInfo: {}
+    userInfo: {},
+    showDialog: false
   },
 
   /**
@@ -17,6 +18,12 @@ Page({
    */
   onLoad: function (options) {
     app.globalData.tabbar.tabbar("tabBar", 2, this)
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
     // 页面初始化 options为页面跳转所带来的参数
     var _self = this
     //调用应用实例的方法获取全局数据
@@ -26,13 +33,6 @@ Page({
         userInfo: userInfo
       })
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
   },
 
   /**
@@ -89,5 +89,17 @@ Page({
     },function(data){
       console.log(data)
     }
-  )}
+  )},
+  onClickdiaView: function () {
+    this.setData({
+      showDialog: !this.data.showDialog
+    });
+  },
+  onFabu: function(){
+    console.log('fds')
+    let that = this;
+    that.setData({
+      showDialog: !this.data.showDialog
+    });
+  }
 })

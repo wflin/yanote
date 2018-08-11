@@ -12,7 +12,6 @@ function tabbarinit() {
  * @param  {[type]} target   [当前对象]
  */
 function tabbarmain(bindName = "tabdata", id, target) {
-  console.log(id)
   var that = target;
   var bindData = {};
   var otabbar = tabbarinit();

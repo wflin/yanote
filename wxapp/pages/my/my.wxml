@@ -1,5 +1,6 @@
 <!--pages/my.wxml-->
 <import src="../../template/tabbar.wxml"/>
+<import src="../../template/Dialog.wxml"/>
 <!-- <view class="container">
   <view  bindtap="bindViewTap" class="userinfo">
     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
@@ -18,7 +19,7 @@
     <view class="list">
         <navigator url="accountinfo" open-type="navigate" class="item item-positive item-avatar item-icon-right user">
             <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>       
-            <view class="userinfo-nickname">{{userInfo.nickName}}</view>          
+            <view class="userinfo-nickname" >{{userInfo.nickName}}</view>          
             <text class="icon-accessory iconfont icon-right "></text>
         </navigator>
 
@@ -67,7 +68,7 @@
             <text class="icon-accessory iconfont icon-right"></text>
         </navigator>
       
-        <navigator url="../util/help?id=22" open-type="navigate" class="item item-icon-left item-icon-right">
+        <navigator url="../util/help?id=22" open-type="navigate" class="item item-icon-left item-icon-right" >
             <text class="icon iconfont icon-guanyuwomen" style="color: #ffc900"></text>
             <view class="h2">关于研研</view>
             <text class="icon-accessory iconfont icon-right"></text>
@@ -84,11 +85,12 @@
         </navigator>
         <navigator url="setting" open-type="navigate" class="item item-icon-left item-icon-right">
             <text class="icon iconfont icon-settings" style="color: #1b6d85"></text>
-            <view class="h2">设置</view>
+            <view class="h2" >设置</view>
             <text class="icon-accessory iconfont icon-right"></text>
         </navigator>
     </view>
 </view>
 <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+<template is="diaView" data="{{showDialog:showDialog}}"/>
 
 

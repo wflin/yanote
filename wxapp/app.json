@@ -4,7 +4,6 @@
     "pages/logs/logs",
     "pages/my/my",
     "pages/additional/additional",
-    "component/selectimages/selectimages",
     "pages/menu/menu"
   ],
   "window": {
